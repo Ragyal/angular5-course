@@ -7,22 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isDisplayed: boolean = false;
-  loggedClicks: String[] = [];
+  loggedClicks: Date[] = [];
 
   onToggleDisplay() {
     this.isDisplayed = !this.isDisplayed;
-    this.loggedClicks.push(Date.now().toString());
+    this.loggedClicks.push(new Date());
   }
 
-  isGreater4(log) {
-    return 3 < this.loggedClicks.findIndex(l => log == l);
-  }
+  // isGreater4(log) {
+  //   return 3 < this.loggedClicks.findIndex(l => log == l);
+  // }
 
-  getColor(log) {
-    if (this.isGreater4(log)) {
-      return "blue"
-    } else {
-      return "white";
-    }
-  }
+  // getColor(log) {
+  //   if (this.isGreater4(log)) {
+  //     return "blue"
+  //   } else {
+  //     return "white";
+  //   }
+  // }
 }

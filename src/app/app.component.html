@@ -12,7 +12,14 @@
             <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
             <p *ngIf="isDisplayed">Secret Password = tuna</p>
             <hr>
-            <p *ngFor="let log of loggedClicks" [ngClass]="{greater4: isGreater4(log) }" [ngStyle]="{backgroundColor: getColor(log)}">{{ log }}</p>
+            <!-- <p *ngFor="let log of loggedClicks" [ngClass]="{greater4: isGreater4(log) }" [ngStyle]="{backgroundColor: getColor(log)}">{{ log }}</p> -->
+            <p
+                *ngFor="let log of loggedClicks; let i = index"
+                [ngClass]="{greater4: i >= 4 }"
+                [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+            >
+                {{ log }}
+            </p>
         </div>
     </div>
 </div>
